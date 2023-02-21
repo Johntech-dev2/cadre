@@ -13,8 +13,7 @@
 <p class="sub-header">March 6th - March 10th</p>
 <p class="sub-header">(Crown Poly Unit)</p>
 </div>
-<div class="form">
-<form action="index.php" method="POST">
+<form action="userinformation.php" method="post">
 <label for="fname">First Name</label><br>
 <input type="text" id="fname" name="firstname" required><br>
 <label for="lname">Last Name</label><br>
@@ -39,18 +38,5 @@
 <br>
 <input type="submit" value="Submit">
 </form>
-</div>
 </body>
 </html>
-<?php
-$connection = mysqli_connect("localhost","root");
-mysqli_select_db($connection,"cadre corps data");
-$firstname = $_POST['firstname'];
-$lastname = $_POST['lastname'];
-$phonenumber = $_POST['phonenumber'];
-$unit = $_POST['unit'];
-$gender = $_POST['gender'];
-$query = "INSERT INTO 'registration data'('firstname','lastname','phonenumber','unit','gender') VALUES ('$firstname','$lastname','$phonenumber','$unit','$gender') ";
-mysqli_query($connection,$query);
-echo "Rugged";
-?>
